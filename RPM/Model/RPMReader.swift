@@ -81,6 +81,10 @@ public class RPMReader: NSObject, ObservableObject {
             print("Value of KCal: \(self.rpm.kcal)")
         }
         
+        if (self.rpm.minute + 1 == 60) {
+            self.rpm.minute = 0
+            self.rpm.hour += 1
+        }
         self.rpm.minute+=1
         print("Update OK\nRPM: \(self.rpm)")
     }    
